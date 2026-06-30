@@ -18,9 +18,12 @@ spec:
     spec:
       containers:
         - name: backend
-          image: thatgeekcontainer/wanderlust-backend-beta:v5
+          image: suhaandocker/wanderlust-backend-beta:v5
           ports:
             - containerPort: 8080
+          env:
+            - name: MONGODB_URI
+              value: "mongodb://mongodb-service:27017/wanderlust"
 ---
 apiVersion: v1
 kind: Service
